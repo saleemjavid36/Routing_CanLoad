@@ -8,6 +8,7 @@ import { AddUserComponent } from './admin/add-user/add-user.component';
 import { AuthenticationGuard } from './auth/authentication.guard';
 import { PermissionsGuard } from './auth/permissions.guard';
 import { ListComponent } from './admin/list/list.component';
+import { FormGuardGuard } from './auth/form-guard.guard';
 
 // const routes: Routes = [
 //   {
@@ -32,7 +33,7 @@ const routes: Routes = [
         path:'',
         children:[
           { path: 'add-user', component: AddUserComponent },
-          { path: 'add-product', component: AddProductComponent },
+          { path: 'add-product', component: AddProductComponent,canDeactivate:[FormGuardGuard] },
         ]
       },
       {path:'list',component:ListComponent}

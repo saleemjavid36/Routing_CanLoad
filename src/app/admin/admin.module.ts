@@ -16,9 +16,16 @@ import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { ListComponent } from './list/list.component';
+import { ConfirmDialogueComponent } from './confirm-dialogue/confirm-dialogue.component';
 
 @NgModule({
-  declarations: [WelcomeComponent, AddUserComponent, AddProductComponent, ListComponent],
+  declarations: [
+    WelcomeComponent,
+    AddUserComponent,
+    AddProductComponent,
+    ListComponent,
+    ConfirmDialogueComponent,
+  ],
   imports: [
     CommonModule,
     ReactiveFormsModule,
