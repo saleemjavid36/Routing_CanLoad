@@ -27,13 +27,21 @@ const routes: Routes = [
     path: 'admin',
     component: WelcomeComponent,
     canActivate: [AuthenticationGuard],
-    canActivateChild:[PermissionsGuard],
     children: [
       {
         path:'',
+        canActivateChild:[PermissionsGuard],
         children:[
-          { path: 'add-user', component: AddUserComponent },
-          { path: 'add-product', component: AddProductComponent,canDeactivate:[FormGuardGuard] },
+          { 
+            path: 'add-user', 
+            component: AddUserComponent,
+            canDeactivate:[FormGuardGuard]  
+          },
+          { 
+            path: 'add-product', 
+            component: AddProductComponent,
+            canDeactivate:[FormGuardGuard] 
+          },
         ]
       },
       {path:'list',component:ListComponent}

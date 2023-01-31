@@ -38,6 +38,7 @@ import { ConfirmDialogueComponent } from './confirm-dialogue/confirm-dialogue.co
     MatSortModule,
     MatDialogModule,
     AdminRoutingModule,
+    MatTooltipModule
   ],
 })
 export class AdminModule {}
