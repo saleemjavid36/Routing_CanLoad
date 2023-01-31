@@ -6,31 +6,35 @@ import { CommonModule } from '@angular/common';
 // import { FormGuardGuard } from '../auth/form-guard.guard';
 import { AddUserComponent } from './add-user/add-user.component';
 import { AddProductComponent } from './add-product/add-product.component';
+import { PermissionsGuard } from '../auth/permissions.guard';
+import { FormGuardGuard } from '../auth/form-guard.guard';
+import { ListComponent } from './list/list.component';
 
 const routes: Routes = [
-  // {
-  //   path: '',
-  //   component: WelcomeComponent,
-  //   children: [
-  //     {
-  //       path: '',
-  //       canActivateChild: [PermissionsGuard],
-  //       children: [
-  //         {
-  //           path: 'add-user',
-  //           canDeactivate: [FormGuardGuard],
-  //           component: AddUserComponent,
-  //         },
-  //         {
-  //           path: 'add-product',
-  //           canDeactivate: [FormGuardGuard],
-  //           component: AddProductComponent,
-  //         },
-  //       ],
-  //     },
-  //     { path: 'list', component: ListComponent },
-  //   ],
-  // },
+  {
+    path: '',
+    component: WelcomeComponent,
+    children: [
+      {
+        path: '',
+        canActivateChild: [PermissionsGuard],
+        children: [
+          {
+            path: 'add-user',
+            canDeactivate: [FormGuardGuard],
+            component: AddUserComponent,
+          },
+          {
+            path: 'add-product',
+            canDeactivate: [FormGuardGuard],
+            component: AddProductComponent,
+          },
+        ],
+      },
+      { path: 'list', component: ListComponent },
+    ],
+  },
+  // {path:'',component:WelcomeComponent}
 ];
 
 @NgModule({

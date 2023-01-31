@@ -8,7 +8,6 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
 import { HomeModule } from './home/home.module';
-import { AdminModule } from './admin/admin.module';
 import { MatTooltipModule } from '@angular/material/tooltip';
 
 @NgModule({
